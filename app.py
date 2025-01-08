@@ -5,12 +5,29 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
 import plotly.express as px
 
+
+import os
+
+
+
+
 # Load NLP Models
 @st.cache_resource
 def load_models():
-    nlp = spacy.load("en_core_web_sm")
-    sentiment_pipeline = pipeline("sentiment-analysis")
-    return nlp, sentiment_pipeline
+    try:
+        nlp = spacy.load("en_core_web_sm")
+        sentiment_pipeline = pipeline("sentiment-analysis")
+        return nlp, sentiment_pipeline
+    except OSError:
+        # If the model is not found, install it
+        os.system("python -m spacy download en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
+        sentiment_pipeline = pipeline("sentiment-analysis")
+        return nlp, sentiment_pipeline
+    
+
+
+
 
 nlp, sentiment_pipeline = load_models()
 
