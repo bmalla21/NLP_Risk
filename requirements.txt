@@ -1,0 +1,5 @@
+streamlit
+spacy
+transformers
+scikit-learn
+plotly
