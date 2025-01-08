@@ -4,6 +4,8 @@
 
 ## Features
 
+
+
 - **Entity Extraction**: Identifies key entities such as organizations, locations, money, and laws from the text.
 - **Sentiment Analysis**: Analyzes the sentiment of the text (positive, negative, or neutral).
 - **Risk Scoring**: Calculates a risk score based on extracted entities and sentiment.
@@ -26,3 +28,9 @@ To clone the repository, run the following command:
 ```bash
 git clone https://github.com/yourusername/riskdetect-nlp.git
 cd riskdetect-nlp
+
+
+
+
+
+
